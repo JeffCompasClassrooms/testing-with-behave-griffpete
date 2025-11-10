@@ -1,13 +1,11 @@
-from behave import given, when, then
-from selenium.webdriver import *
+from behave import given, then
 from selenium.webdriver.common.by import By
 
-@Given("I open the instructables peppers ghost page")
-def step_open_page(context):
-    context.behave_driver.get("https://www.instructables.com/Peppers-Ghost-Illusion-in-a-Small-Space/")
+@given('I open the instructables peppers ghost page')
+def step_open_peppers_ghost(context):
+    context.driver.get('https://www.instructables.com/Peppers-Ghost/')
 
-@Then("I expect that there is at least one picture there")
-def step_check_for_picture(context):
-    images = context.behave_driver.find_elements(By.CSS_SELECTOR, "img") 
-    assert images != []
-
+@then('I expect that there is at least one picture there')
+def step_check_pictures(context):
+    images = context.driver.find_elements(By.TAG_NAME, 'img')
+    assert len(images) > 0, f"Expected at least one image, but found {len(images)}"
