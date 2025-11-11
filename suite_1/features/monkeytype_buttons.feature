@@ -13,10 +13,10 @@ Feature: MonkeyType Buttons Work
     When I click on the element ".view-login"
     Then I expect that the url contains "/login"
 
-  Scenario: About button works
+  Scenario: X link redirects to X
     Given I am on the Monkeytype homepage
-    When I click on the element ".view-about"
-    Then I expect that the url contains "/about"
+    When I click on the element "a.textButton[href='https://x.com/monkeytype']"
+    Then I expect that the url is "https://x.com/monkeytype"
 
   Scenario: GitHub link redirects to GitHub
     Given I am on the Monkeytype homepage

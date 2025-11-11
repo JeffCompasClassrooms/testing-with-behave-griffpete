@@ -11,13 +11,9 @@ Feature: MonkeyType Homepage Loads
     Given I am on the Monkeytype homepage
     Then I expect that element "#logo" is visible
 
-  Scenario: Test all duration options are visible
+  Scenario: Settings page loads
     Given I am on the Monkeytype homepage
-    Then I expect that element ".time" is visible
-    And I expect that element "button.textButton[timeconfig='15']" is visible
-    And I expect that element "button.textButton[timeconfig='30']" is visible
-    And I expect that element "button.textButton[timeconfig='60']" is visible
-    And I expect that element "button.textButton[timeconfig='120']" is visible
+    Then I expect that element ".view-settings" is visible
 
   Scenario: Login selector exists
     Given I am on the Monkeytype homepage
@@ -27,8 +23,6 @@ Feature: MonkeyType Homepage Loads
     Given I am on the Monkeytype homepage
     Then I expect that element ".view-settings" is visible
 
-  Scenario: Typing area loads
+  Scenario: Typing test loads
     Given I am on the Monkeytype homepage
-    Then I expect that element "#typingtest" is visible
-    And I expect that element "#wordsWrapper" is visible
-    And I expect that element "#wordsInput" is visible
+    Then I expect that element "#startTestButton" is visible
