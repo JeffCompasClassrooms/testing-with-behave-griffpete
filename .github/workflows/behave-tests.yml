@@ -23,7 +23,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install behave
+          pip install behave selenium
 
-      - name: Run tests
-        run: python -m behave
+      - name: Run all Behave test suites
+        run: |
+          python -m behave isitchristmas/features
+          python -m behave peppers-ghost/features
+          python -m behave suite_1/features
+          python -m behave suite_2/features
